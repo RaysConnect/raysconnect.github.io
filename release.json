@@ -5,7 +5,7 @@
     "android": "v1.1.0",
     "macos": "v1.1.0",
     "linux": "v1.1.0",
-    "linuxArm64": "v0.2.0"
+    "linuxArm64": "v1.1.0"
   },
   "previousRelease": "v0.2.0"
 }

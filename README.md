@@ -26,7 +26,7 @@ a server profile, administrator credentials or a hosted VPN subscription.
 | Windows | **1.1.0** | [EXE](https://github.com/RaysConnect/rays-connect/releases/download/v1.1.0/rays-connect-windows-x64-setup.exe) · [MSI](https://github.com/RaysConnect/rays-connect/releases/download/v1.1.0/rays-connect-windows-x64.msi) | Windows 10/11 x64, Edge WebView2 |
 | Android | **1.1.0** | [ARM64 APK](https://github.com/RaysConnect/rays-connect/releases/download/v1.1.0/rays-connect-android-arm64.apk) | Android 7.0+, ARM64 |
 | macOS | **1.1.0** | [Apple Silicon DMG](https://github.com/RaysConnect/rays-connect/releases/download/v1.1.0/rays-connect-macos-arm64.dmg) | Apple Silicon / ARM64 |
-| Linux | AMD64 **1.1.0** / ARM64 0.2.0 | [AMD64 DEB](https://github.com/RaysConnect/rays-connect/releases/download/v1.1.0/rays-connect-linux-amd64.deb) · [ARM64 DEB](https://github.com/RaysConnect/rays-connect/releases/download/v0.2.0/rays-connect-linux-arm64.deb) | Debian-based distribution, glibc 2.39+; see release notes |
+| Linux | **1.1.0** | [AMD64 DEB](https://github.com/RaysConnect/rays-connect/releases/download/v1.1.0/rays-connect-linux-amd64.deb) · [ARM64 DEB](https://github.com/RaysConnect/rays-connect/releases/download/v1.1.0/rays-connect-linux-arm64.deb) | Debian-based distribution, glibc 2.39+; see release notes |
 
 Windows EXE installs for the current user; MSI is intended for machine-wide
 deployment. Choose one format. Windows installers are not Authenticode-signed.
@@ -81,7 +81,7 @@ Mac and Ubuntu each passed 24/24 VPN web requests over about seven minutes,
 a 1 MiB download and exact upload echo. Direct-domain suffix rules passed in
 both modes, and force-close tests restored physical network routes. An initial
 Mac VPN attempt needed a stop/start before the passing runs. Linux AMD64 was
-tested on Ubuntu 26.04.1; Linux ARM64 remains build-only at 0.2.0.
+tested on Ubuntu 26.04.1; Linux ARM64 1.1.0 is build-verified only; runtime testing was not performed.
 The Android release payload was tested on a physical Xiaomi phone, including
 DNS, exact upload integrity, bulk downloads and concurrent requests. VPN checks
 ran from a separate application UID. CPU, memory, thread count and temperature
