@@ -25,12 +25,12 @@ a server profile, administrator credentials or a hosted VPN subscription.
 | --- | --- | --- | --- |
 | Windows | **1.1.0** | [EXE](https://github.com/RaysConnect/rays-connect/releases/download/v1.1.0/rays-connect-windows-x64-setup.exe) · [MSI](https://github.com/RaysConnect/rays-connect/releases/download/v1.1.0/rays-connect-windows-x64.msi) | Windows 10/11 x64, Edge WebView2 |
 | Android | **1.1.0** | [ARM64 APK](https://github.com/RaysConnect/rays-connect/releases/download/v1.1.0/rays-connect-android-arm64.apk) | Android 7.0+, ARM64 |
-| macOS | 0.2.0 | [Apple Silicon DMG](https://github.com/RaysConnect/rays-connect/releases/download/v0.2.0/rays-connect-macos-arm64.dmg) | Apple Silicon / ARM64 |
-| Linux | 0.2.0 | [AMD64 DEB](https://github.com/RaysConnect/rays-connect/releases/download/v0.2.0/rays-connect-linux-amd64.deb) · [ARM64 DEB](https://github.com/RaysConnect/rays-connect/releases/download/v0.2.0/rays-connect-linux-arm64.deb) | Debian-based distribution, glibc 2.39+; see release notes |
+| macOS | **1.1.0** | [Apple Silicon DMG](https://github.com/RaysConnect/rays-connect/releases/download/v1.1.0/rays-connect-macos-arm64.dmg) | Apple Silicon / ARM64 |
+| Linux | AMD64 **1.1.0** / ARM64 0.2.0 | [AMD64 DEB](https://github.com/RaysConnect/rays-connect/releases/download/v1.1.0/rays-connect-linux-amd64.deb) · [ARM64 DEB](https://github.com/RaysConnect/rays-connect/releases/download/v0.2.0/rays-connect-linux-arm64.deb) | Debian-based distribution, glibc 2.39+; see release notes |
 
 Windows EXE installs for the current user; MSI is intended for machine-wide
 deployment. Choose one format. Windows installers are not Authenticode-signed.
-The macOS 0.2.0 package is ad-hoc signed and is not Apple notarized.
+The macOS 1.1.0 package is ad-hoc signed and is not Apple notarized.
 
 **Android 0.2.0 → 1.1.0:** the public APK uses a new permanent signing key.
 Save your shareable profile before uninstalling 0.2.0, then install 1.1.0 and
@@ -49,7 +49,7 @@ updates signed with the same key.
    configured Worker transports. Available choices depend on your profile.
 4. Choose **SOCKS proxy** or **System VPN**, press Start and wait for Ready.
    SOCKS applications must use the displayed local proxy address, normally
-   `127.0.0.1:1080`. VPN mode requires Android VPN consent or Windows administrator
+   `127.0.0.1:1080`. VPN mode requires Android VPN consent or desktop administrator
    approval for the VPN helper.
 
 5. On Android, use **Settings → Add Quick Settings tile**, then accept Android's
@@ -65,7 +65,7 @@ updates signed with the same key.
 - **Automatic transport selection:** qualifying endpoints and warm alternatives
   help new connections recover when a carrier stalls. Manual selection pins one
   endpoint and disables automatic fallback.
-- **Direct routing:** domain, suffix, IP and CIDR rules on current Windows and
+- **Direct routing:** domain, suffix, IP and CIDR rules on current desktop and
   Android clients. Direct destinations bypass the Rays tunnel. Reconnect after
   changing routing policy. Android also supports application routing policies.
 - **Profile tools:** QR, clipboard and file import, with sharing controls for private profiles.
@@ -76,7 +76,12 @@ updates signed with the same key.
 
 ## Verification and performance
 
-Windows and Android **1.1.0** passed bounded live SOCKS and system VPN checks.
+Windows, Android, macOS ARM64 and Linux AMD64 **1.1.0** passed bounded live SOCKS and system VPN checks.
+Mac and Ubuntu each passed 24/24 VPN web requests over about seven minutes,
+a 1 MiB download and exact upload echo. Direct-domain suffix rules passed in
+both modes, and force-close tests restored physical network routes. An initial
+Mac VPN attempt needed a stop/start before the passing runs. Linux AMD64 was
+tested on Ubuntu 26.04.1; Linux ARM64 remains build-only at 0.2.0.
 The Android release payload was tested on a physical Xiaomi phone, including
 DNS, exact upload integrity, bulk downloads and concurrent requests. VPN checks
 ran from a separate application UID. CPU, memory, thread count and temperature
@@ -114,4 +119,4 @@ tokens, private keys or administrator passwords.
 
 This repository contains the website and release artifacts. The application source
 tree is not hosted here; GitHub's generated source archives contain the website.
-Older releases remain available alongside current Windows and Android packages.
+Older releases remain available alongside the current packages.
