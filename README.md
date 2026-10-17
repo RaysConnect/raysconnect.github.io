@@ -41,6 +41,8 @@ updates signed with the same key.
 
 **Android 1.1.0 refresh:** this update retains the public 1.1.0 signing key and can be installed over the earlier public 1.1.0 APK without uninstalling.
 
+**Windows 1.1.0 refresh (17 October):** fixes VPN startup with compatible existing Windows DNS policies, makes setup errors readable, and avoids repeated delays on stalled transports. Startup, cleanup and reconnection were verified; transfer TLS errors/timeouts remain under investigation.
+
 ## Get connected
 
 1. Install the package for your device from the official links above.
